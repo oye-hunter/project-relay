@@ -70,7 +70,7 @@ BETTER_AUTH_URL="http://localhost:3000"
 
    - Create a new projectCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-   - Copy the connection string from the dashboard
+   - Copy the connection string from the inbox
 
 2. **BETTER_AUTH_SECRET**: 
    - Generate a secure random string (at least 32 characters)

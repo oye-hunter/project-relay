@@ -41,8 +41,8 @@ export default function LoginPage() {
         return;
       }
 
-      // Successful login - redirect to dashboard
-      router.push("/dashboard");
+      // Successful login - redirect to inbox
+      router.push("/inbox");
       router.refresh();
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");

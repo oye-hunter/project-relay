@@ -61,8 +61,8 @@ export default function RegisterPage() {
         return;
       }
 
-      // Successful registration - redirect to dashboard
-      router.push("/dashboard");
+      // Successful registration - redirect to inbox
+      router.push("/inbox");
       router.refresh();
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");
