@@ -4,8 +4,6 @@ import * as THREE from 'three';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset } from 'postprocessing';
 import { HyperspeedOptions } from './HyperSpeedPresets';
 
-import './Hyperspeed.css';
-
 const Hyperspeed = ({
   effectOptions = {
     onSpeedUp: () => {},

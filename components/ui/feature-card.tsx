@@ -6,6 +6,8 @@ interface FeatureCardProps {
   description: string;
   iconBgColor?: string;
   className?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }
 
 export function FeatureCard({
@@ -14,6 +16,8 @@ export function FeatureCard({
   description,
   iconBgColor = "bg-primary-bg",
   className,
+  titleClassName,
+  descriptionClassName,
 }: FeatureCardProps) {
   return (
     <div
@@ -30,10 +34,10 @@ export function FeatureCard({
       >
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-canvas-text-contrast mb-2">
+      <h3 className={cn("text-xl font-semibold text-canvas-text-contrast mb-2", titleClassName)}>
         {title}
       </h3>
-      <p className="text-canvas-text">{description}</p>
+      <p className={cn("text-canvas-text", descriptionClassName)}>{description}</p>
     </div>
   );
 }
