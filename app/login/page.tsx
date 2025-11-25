@@ -52,12 +52,12 @@ export default function LoginPage() {
 
   return (
     <AuthLayout>
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md border-canvas-border bg-canvas-base/50 backdrop-blur-xl shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(6,182,212,0.15)] transition-all duration-500">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold text-center">
+          <CardTitle className="text-3xl font-bold text-center text-canvas-text-contrast">
             Welcome Back
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-canvas-text">
             Sign in to your account to continue
           </CardDescription>
         </CardHeader>
@@ -90,14 +90,18 @@ export default function LoginPage() {
             />
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button 
+              type="submit" 
+              className="w-full bg-primary-solid hover:bg-primary-solid-hover text-primary-on-primary font-bold shadow-[0_0_20px_-5px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_-5px_rgba(6,182,212,0.6)] transition-all duration-300" 
+              disabled={isLoading}
+            >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>
             <p className="text-sm text-canvas-text text-center">
               Don&apos;t have an account?{" "}
               <Link
                 href="/register"
-                className="text-primary-text hover:text-primary-text-contrast font-medium underline underline-offset-4"
+                className="text-primary-text hover:text-primary-text-contrast font-medium underline underline-offset-4 transition-colors"
               >
                 Create one now
               </Link>
