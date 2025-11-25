@@ -65,14 +65,14 @@ export const hyperspeedPresets: Record<string, HyperspeedOptions> = {
     carShiftX: [-0.8, 0.8],
     carFloorSeparation: [0, 5],
     colors: {
-      roadColor: 0x080808,
-      islandColor: 0x0a0a0a,
-      background: 0x000000,
-      shoulderLines: 0x131318,
-      brokenLines: 0x131318,
-      leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
-      rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
-      sticks: 0x03b3c3
+      roadColor: 0x1c1c1f,
+      islandColor: 0x232326,
+      background: 0x161618,
+      shoulderLines: 0x34343a,
+      brokenLines: 0x34343a,
+      leftCars: [0x3e63dd, 0x5373e7, 0x849dff],
+      rightCars: [0x05a2c2, 0x00b1cc, 0x00c2d7],
+      sticks: 0x05a2c2
     }
   },
   two: {
