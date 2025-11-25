@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Project Relay - Modern Email Interface",
+  title: "Relay - Modern Email Interface",
   description: "A modern email inbox interface with authentication",
 };
 

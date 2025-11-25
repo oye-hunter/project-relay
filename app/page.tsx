@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header/header";
 import { FeatureCard } from "@/components/ui/feature-card";
+import { HeroSection } from "@/components/home/hero-section";
 
 export default function Home() {
   return (
@@ -10,29 +11,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl font-bold text-canvas-text-contrast mb-6">
-            Modern Email Management,
-            <span className="text-primary-solid"> Simplified</span>
-          </h2>
-          <p className="text-xl text-canvas-text mb-8">
-            Experience a clean, intuitive email interface designed for
-            productivity. Manage your communications effortlessly with our
-            modern, streamlined platform.
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <Link href="/register">
-              <Button size="lg">Create Free Account</Button>
-            </Link>
-            <Link href="/login">
-              <Button size="lg" variant="outline">
-                Sign In
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-16">
@@ -116,7 +95,7 @@ export default function Home() {
             communication workflow.
           </p>
           <Link href="/register">
-            <Button size="lg">Start Using Project Relay Today</Button>
+            <Button size="lg">Start Using Relay Today</Button>
           </Link>
         </div>
       </section>
@@ -125,7 +104,7 @@ export default function Home() {
       <footer className="border-t border-canvas-border-hover bg-canvas-base mt-16">
         <div className="container mx-auto px-4 py-8">
           <p className="text-center text-sm text-canvas-text">
-            © 2025 Project Relay. Built with Next.js, BetterAuth, and Neon.
+            © 2025 Relay. Built with Next.js, BetterAuth, and Neon.
           </p>
         </div>
       </footer>

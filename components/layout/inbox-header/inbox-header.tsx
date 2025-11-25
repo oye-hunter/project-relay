@@ -32,7 +32,7 @@ export function InboxHeader() {
     <div className="border-b border-canvas-border-hover bg-canvas-base px-6 py-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 flex-1">
-          <h1 className="text-xl font-semibold text-canvas-text-contrast">Project Relay</h1>
+          <h1 className="text-xl font-semibold text-canvas-text-contrast">Relay</h1>
           
           {/* Search */}
           <div className="relative max-w-md flex-1">
