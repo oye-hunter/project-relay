@@ -1,25 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/layout/header/header";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-canvas-bg">
       {/* Header */}
-      <header className="border-b border-canvas-border bg-canvas-base">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-canvas-text-contrast">
-            Project Relay
-          </h1>
-          <div className="flex items-center gap-3">
-            <Link href="/login">
-              <Button variant="ghost">Sign In</Button>
-            </Link>
-            <Link href="/register">
-              <Button>Get Started</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 text-center">
