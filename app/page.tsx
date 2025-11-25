@@ -36,7 +36,7 @@ export default function Home() {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-canvas-base border border-canvas-border rounded-lg p-6">
+          <div className="bg-canvas-base border border-canvas-border-hover rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-primary-bg rounded-lg flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-canvas-base border border-canvas-border rounded-lg p-6">
+          <div className="bg-canvas-base border border-canvas-border-hover rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-secondary-bg rounded-lg flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-canvas-base border border-canvas-border rounded-lg p-6">
+          <div className="bg-canvas-base border border-canvas-border-hover rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-success-bg rounded-lg flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-primary-bg border border-primary-border rounded-lg p-12 text-center max-w-3xl mx-auto">
+        <div className="bg-primary-bg border border-primary-border-hover rounded-lg p-12 text-center max-w-3xl mx-auto shadow-md">
           <h3 className="text-3xl font-bold text-canvas-text-contrast mb-4">
             Ready to Transform Your Email Experience?
           </h3>
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-canvas-border bg-canvas-base mt-16">
+      <footer className="border-t border-canvas-border-hover bg-canvas-base mt-16">
         <div className="container mx-auto px-4 py-8">
           <p className="text-center text-sm text-canvas-text">
             © 2025 Project Relay. Built with Next.js, BetterAuth, and Neon.
