@@ -2,16 +2,29 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { Star, Archive, Trash2, MoreVertical } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { emails } from "@/content/emails/dummy-emails"
-import { InboxHeader } from "@/components/layout/inbox-header/inbox-header"
 
 export default function InboxPage() {
+  const searchParams = useSearchParams()
+  const searchQuery = searchParams.get("q")?.toLowerCase() || ""
+  
   const [selectedEmails, setSelectedEmails] = useState<number[]>([])
   const [starredEmails, setStarredEmails] = useState<number[]>(
     emails.filter(e => e.isStarred).map(e => e.id)
   )
+
+  const filteredEmails = emails.filter(email => {
+    if (searchQuery && 
+        !email.subject.toLowerCase().includes(searchQuery) && 
+        !email.sender.toLowerCase().includes(searchQuery) && 
+        !email.preview.toLowerCase().includes(searchQuery)) {
+      return false
+    }
+    return true
+  })
 
   const toggleEmailSelection = (id: number) => {
     setSelectedEmails(prev =>
@@ -27,16 +40,14 @@ export default function InboxPage() {
   }
 
   return (
-    <div className="flex h-screen flex-col">
-      <InboxHeader />
-
+    <div className="flex flex-col h-full">
       {/* Inbox Header */}
       <div className="border-b border-canvas-border-hover bg-canvas-base px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-semibold text-canvas-text-contrast">Inbox</h2>
             <p className="text-sm text-canvas-text">
-              {emails.filter(e => !e.isRead).length} unread messages
+              {filteredEmails.filter(e => !e.isRead).length} unread messages
             </p>
           </div>
           
@@ -58,7 +69,12 @@ export default function InboxPage() {
       {/* Email List */}
       <div className="flex-1 overflow-auto">
         <div className="divide-y divide-canvas-border">
-          {emails.map((email) => (
+          {filteredEmails.length === 0 ? (
+            <div className="flex items-center justify-center h-full text-canvas-text">
+              No emails found matching "{searchQuery}"
+            </div>
+          ) : (
+            filteredEmails.map((email) => (
             <Link
               key={email.id}
               href={`/inbox/${email.id}`}
@@ -132,7 +148,7 @@ export default function InboxPage() {
                 <MoreVertical className="h-4 w-4 text-canvas-text" />
               </button>
             </Link>
-          ))}
+          )))}
         </div>
       </div>
     </div>

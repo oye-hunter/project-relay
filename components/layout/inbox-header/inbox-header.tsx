@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 import { Search, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -8,7 +8,19 @@ import { signOut, useSession } from "@/lib/auth-client"
 
 export function InboxHeader() {
   const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const { data: session } = useSession()
+
+  const handleSearch = (term: string) => {
+    const params = new URLSearchParams(searchParams)
+    if (term) {
+      params.set('q', term)
+    } else {
+      params.delete('q')
+    }
+    router.replace(`${pathname}?${params.toString()}`)
+  }
 
   const handleSignOut = async () => {
     await signOut()
@@ -29,6 +41,8 @@ export function InboxHeader() {
               type="search"
               placeholder="Search mail..."
               className="pl-9"
+              onChange={(e) => handleSearch(e.target.value)}
+              defaultValue={searchParams.get('q')?.toString()}
             />
           </div>
         </div>
