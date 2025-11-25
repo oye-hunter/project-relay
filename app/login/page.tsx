@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/ui/form-field";
 import { Alert } from "@/components/ui/alert";
-import { AuthLayout } from "@/components/layout/auth-layout";
+import { AuthLayout } from "@/components/layout/auth-layout/auth-layout";
 import {
   Card,
   CardContent,

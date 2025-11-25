@@ -2,16 +2,12 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Star, Archive, Trash2, MoreVertical, Search, LogOut } from "lucide-react"
+import { Star, Archive, Trash2, MoreVertical } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { signOut, useSession } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
 import { emails } from "@/content/emails/dummy-emails"
+import { InboxHeader } from "@/components/layout/inbox-header/inbox-header"
 
 export default function InboxPage() {
-  const router = useRouter()
-  const { data: session } = useSession()
   const [selectedEmails, setSelectedEmails] = useState<number[]>([])
   const [starredEmails, setStarredEmails] = useState<number[]>(
     emails.filter(e => e.isStarred).map(e => e.id)
@@ -30,42 +26,9 @@ export default function InboxPage() {
     )
   }
 
-  const handleSignOut = async () => {
-    await signOut()
-    router.push("/login")
-    router.refresh()
-  }
-
   return (
     <div className="flex h-screen flex-col">
-      {/* Top Header */}
-      <div className="border-b border-canvas-border-hover bg-canvas-base px-6 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4 flex-1">
-            <h1 className="text-xl font-semibold text-canvas-text-contrast">Project Relay</h1>
-            
-            {/* Search */}
-            <div className="relative max-w-md flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-canvas-text" />
-              <Input
-                type="search"
-                placeholder="Search mail..."
-                className="pl-9"
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-canvas-text">
-              {session?.user?.name || session?.user?.email}
-            </span>
-            <Button variant="outline" size="sm" onClick={handleSignOut}>
-              <LogOut className="h-4 w-4 mr-2" />
-              Sign Out
-            </Button>
-          </div>
-        </div>
-      </div>
+      <InboxHeader />
 
       {/* Inbox Header */}
       <div className="border-b border-canvas-border-hover bg-canvas-base px-6 py-4">

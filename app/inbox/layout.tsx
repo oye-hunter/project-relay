@@ -1,5 +1,5 @@
 import { SidebarProvider } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/layout/inbox/app-sidebar"
+import { AppSidebar } from "@/components/layout/app-sidebar/app-sidebar"
 
 export default function InboxLayout({
   children,
